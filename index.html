@@ -2,351 +2,346 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ралли – история, машины, легенды</title>
-    <style>
-        /* ----- БАЗОВЫЕ СТИЛИ (без дизайна, только для читаемости и адаптива) ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            background: #fff;
-            color: #111;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        header {
-            margin-bottom: 30px;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            list-style: none;
-            margin-top: 10px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #0066cc;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            margin: 40px 0;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
-        .filter-btn {
-            background: #f0f0f0;
-            border: 1px solid #aaa;
-            padding: 6px 16px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-
-        .filter-btn.active {
-            background: #0066cc;
-            color: white;
-            border-color: #0066cc;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            background: #fafafa;
-        }
-
-        /* Стиль для контейнера картинки, чтобы все фото были одного размера */
-        .card-img {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            background: #eee;
-            margin-bottom: 12px;
-        }
-
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;  /* чтобы фото заполняло блок без искажений */
-            display: block;
-        }
-
-        .card h3 {
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-item {
-            border: 1px solid #ccc;
-            cursor: pointer;
-            transition: 0.1s;
-            background: #f5f5f5;
-        }
-
-        .gallery-item .card-img {
-            height: 150px;
-            margin-bottom: 0;
-        }
-
-        .gallery-item p {
-            padding: 8px;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        /* модальное окно */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: white;
-            max-width: 90%;
-            max-height: 90%;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-            max-height: 70vh;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 5px;
-            right: 15px;
-            font-size: 28px;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #555;
-        }
-
-        @media (max-width: 640px) {
-            body {
-                padding: 10px;
-            }
-            .nav-links {
-                flex-direction: column;
-                gap: 8px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1>🏁 Ралли: история, машины, легенды</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#cars">Автомобили</a></li>
-                <li><a href="#drivers">Пилоты</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#">История</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🏁</span>
+                <span class="logo-text">Rally<span>WRC</span></span>
+            </a>
+            <button class="menu-toggle">☰</button>
+            <nav class="main-nav">
+                <button class="nav-btn active" data-page="home">Главная</button>
+                <button class="nav-btn" data-page="history">История</button>
+                <button class="nav-btn" data-page="cars">Автомобили</button>
+                <button class="nav-btn" data-page="drivers">Пилоты</button>
+                <button class="nav-btn" data-page="gallery">Галерея</button>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- Секция "Знаменитые автомобили" с фильтром -->
-        <section id="cars">
-            <h2>🏎️ Знаменитые автомобили</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Все</button>
-                <button class="filter-btn" data-filter="group-b">Группа B</button>
-                <button class="filter-btn" data-filter="wrc">WRC / Modern</button>
+    <main class="main-container">
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Ралли: <span>история</span>, машины, легенды</h1>
+                    <p>Погрузитесь в мир Чемпионата мира по ралли — от первых гонок 1973 года до гибридных болидов Rally1.</p>
+                </div>
             </div>
-            <div class="cards-grid" id="cars-container">
-                <!-- Группа B -->
-                <div class="card" data-era="group-b">
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="year">1973</span>
+                        <h3>Рождение WRC</h3>
+                        <p> FIA основала Чемпионат мира по ралли. Первым чемпионом стала Renault с Alpine A110.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="year">1982-1986</span>
+                        <h3>Эра Group B</h3>
+                        <p>Полный привод, 500+ л.с., легендарные Audi Quattro, Peugeot 205 T16. Эра завершилась трагедией на Корсике.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="year">2004-2012</span>
+                        <h3>Доминирование Лёба</h3>
+                        <p>Себастьен Лёб выиграл 9 титулов подряд — рекорд, который вряд ли кто-то побьёт.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="year">2022-сейчас</span>
+                        <h3>Гибридная эра</h3>
+                        <p>Rally1 с гибридными ��вигателями 380 + 136 л.с. Калле Рованперя — самый молодой чемпион.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards-grid" style="margin-top: 3rem;">
+                <div class="card">
                     <div class="card-img">
                         <img src="images/audi-quattro.jpg" alt="Audi Quattro">
                     </div>
-                    <h3>Audi Quattro</h3>
-                    <p><strong>Эпоха:</strong> Группа B</p>
-                    <p>5-цилиндровый турбо, полный привод, 350+ л.с.</p>
-                </div>
-                <div class="card" data-era="group-b">
-                    <div class="card-img">
-                        <img src="images/Lancia-Delta-S4.jpg" alt="Lancia Delta S4">
+                    <div class="card-content">
+                        <span class="card-badge">Group B</span>
+                        <h3>Audi Quattro</h3>
+                        <p>Первый полноприводный раллийный автомобиль, изменивший историю.</p>
                     </div>
-                    <h3>Lancia Delta S4</h3>
-                    <p><strong>Эпоха:</strong> Группа B</p>
-                    <p>Компрессор + турбо, карбоновый кузов.</p>
                 </div>
-                <div class="card" data-era="group-b">
-                    <div class="card-img">
-                        <img src="images/Ford-RS200.jpg" alt="Ford RS200">
-                    </div>
-                    <h3>Ford RS200</h3>
-                    <p><strong>Эпоха:</strong> Группа B</p>
-                    <p>Среднемоторный, 450 л.с., разгон до сотни за 3 сек.</p>
-                </div>
-                <!-- WRC / Modern -->
-                <div class="card" data-era="wrc">
-                    <div class="card-img">
-                        <img src="images/Subaru-Impreza-WRC-97.jpg" alt="Subaru Impreza WRC 97">
-                    </div>
-                    <h3>Subaru Impreza WRC 97</h3>
-                    <p><strong>Эпоха:</strong> WRC</p>
-                    <p>Боксерный турбо, легендарный синий с золотыми дисками.</p>
-                </div>
-                <div class="card" data-era="wrc">
-                    <div class="card-img">
-                        <img src="images/Mitsubishi-Lancer-Evo-VI.jpg" alt="Mitsubishi Lancer Evo VI">
-                    </div>
-                    <h3>Mitsubishi Lancer Evo VI</h3>
-                    <p><strong>Эпоха:</strong> WRC</p>
-                    <p>Чемпионский автомобиль Томми Мякинена.</p>
-                </div>
-                <div class="card" data-era="wrc">
-                    <div class="card-img">
-                        <img src="images/Toyota-GR-Yaris-Rally1.jpg" alt="Toyota GR Yaris Rally1">
-                    </div>
-                    <h3>Toyota GR Yaris Rally1</h3>
-                    <p><strong>Эпоха:</strong> WRC (гибрид)</p>
-                    <p>Гибридная установка, 500+ л.с., чемпион 2022-2023.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Секция "Легендарные пилоты" -->
-        <section id="drivers">
-            <h2>🏆 Легендарные пилоты</h2>
-            <div class="cards-grid">
                 <div class="card">
                     <div class="card-img">
                         <img src="images/Loeb.jpg" alt="Себастьен Лёб">
                     </div>
-                    <h3>Себастьен Лёб</h3>
-                    <p>9 титулов WRC, 79 побед. Citroën Xsara, DS3.</p>
+                    <div class="card-content">
+                        <span class="card-badge">Легенда</span>
+                        <h3>Себастьен Лёб</h3>
+                        <p>9-кратный чемпион WRC. Величайший пилот в истории ралли.</p>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/Kankkunen.jpg" alt="Юха Канккунен">
+                        <img src="images/Toyota-GR-Yaris-Rally1.jpg" alt="Toyota GR Yaris Rally1">
                     </div>
-                    <h3>Юха Канккунен</h3>
-                    <p>4 титула, победы на Lancia Delta, Toyota Celica.</p>
-                </div>
-                <div class="card">
-                    <div class="card-img">
-                        <img src="images/McRae.jpg" alt="Колин МакРэй">
+                    <div class="card-content">
+                        <span class="card-badge">Rally1</span>
+                        <h3>Toyota GR Yaris</h3>
+                        <p>Гибридный болид, доминирующий в современном WRC.</p>
                     </div>
-                    <h3>Колин МакРэй</h3>
-                    <p>1 титул, культовый стиль. Subaru Impreza, Ford Focus.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Секция "Галерея моментов" с модальным окном -->
-        <section id="gallery">
-            <h2>📸 Галерея моментов</h2>
-            <div class="gallery-grid" id="gallery-container">
-                <div class="gallery-item"
-                     data-img-src="images/jamp-Rally-Finland.jpg"
-                     data-img-alt="Прыжок в Финляндии">
+        <!-- HISTORY PAGE -->
+        <section id="history" class="page">
+            <h2 class="section-title">📜 История WRC</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Все эпохи</button>
+                <button class="filter-btn" data-filter="early">1973-1981</button>
+                <button class="filter-btn" data-filter="group-b">Group B</button>
+                <button class="filter-btn" data-filter="group-a">Group A</button>
+                <button class="filter-btn" data-filter="wrc-1">1997-2016</button>
+                <button class="filter-btn" data-filter="wrc-2">2017-2021</button>
+                <button class="filter-btn" data-filter="present">2022-сейчас</button>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card" data-era="early">
+                    <div class="card-content">
+                        <span class="card-badge">1973-1981</span>
+                        <h3>🏁 Ранние годы</h3>
+                        <p><strong>Рождение WRC</strong></p>
+                        <p>Чемпионат стартовал в 1973 году. Renault стала первым чемпионом.</p>
+                        <p><strong>Легенды:</strong> Ханну Миккола, Ари Ватанен, Бьорн Уолдегорд</p>
+                        <p><strong>Машины:</strong> Lancia Stratos, Ford Escort RS</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="group-b">
+                    <div class="card-content">
+                        <span class="card-badge">1982-1986</span>
+                        <h3>🔥 Group B</h3>
+                        <p><strong>Эра дикого Запада</strong></p>
+                        <p>4WD + 500+ л.с. Разгон 0-100 за 2.3 сек на гравии.</p>
+                        <p><strong>Трагедия:</strong> Гибель Тойвонена на Корсике 1986.</p>
+                        <p><strong>Машины:</strong> Audi Quattro, Peugeot 205 T16, Lancia Delta S4</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="group-a">
+                    <div class="card-content">
+                        <span class="card-badge">1987-1996</span>
+                        <h3>🦾 Group A</h3>
+                        <p><strong>Возвращение к истокам</strong></p>
+                        <p>Машины ближе к серийным. Снижение затрат.</p>
+                        <p><strong>Lancia Delta Integrale:</strong> 6 титулов подряд (1987-1992)</p>
+                        <p><strong>Звёзды:</strong> Колин МакРей, Ричард Бёрнс</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="wrc-1">
+                    <div class="card-content">
+                        <span class="card-badge">1997-2016</span>
+                        <h3>🌪️ WRC Classic</h3>
+                        <p><strong>Новые правила</strong></p>
+                        <p>Не нужно 2500 серийных авто. Приход Citroën, Hyundai.</p>
+                        <p><strong>Томми Мякинен:</strong> 4 титула (Mitsubishi)</p>
+                        <p><strong>ЛЕЁБ:</strong> 9 титулов подряд! (2004-2012)</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="wrc-2">
+                    <div class="card-content">
+                        <span class="card-badge">2017-2021</span>
+                        <h3>⚡️ WRC Modern</h3>
+                        <p><strong>Новое поколение</strong></p>
+                        <p>Больше мощности, агрессивная аэродинамика.</p>
+                        <p><strong>Отт Тянак:</strong> Чемпион 2019 (Toyota)</p>
+                        <p><strong>Ожье:</strong>Чемпион 2017, 2020, 2021</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="present">
+                    <div class="card-content">
+                        <span class="card-badge">2022-сейчас</span>
+                        <h3>🎯 Гибридная эра</h3>
+                        <p><strong>Rally1</strong></p>
+                        <p>380 + 136 л.с. (гибрид). Toyota вернулась в лидеры.</p>
+                        <p><strong>Калле Рованперя:</strong> Чемпион 2022, 2023 — самый молодой!</p>
+                        <p><strong>2024:</strong> Нёвиль — первый титул Hyundai!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARS PAGE -->
+        <section id="cars" class="page">
+            <h2 class="section-title">🏎️ Знаменитые автомобили</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="group-b">Group B</button>
+                <button class="filter-btn" data-filter="group-a">Group A</button>
+                <button class="filter-btn" data-filter="wrc">WRC</button>
+                <button class="filter-btn" data-filter="rally1">Rally1</button>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card" data-era="group-b">
                     <div class="card-img">
-                        <img src="images/jamp-Rally-Finland.jpg" alt="прыжок">
+                        <img src="images/audi-quattro.jpg" alt="Audi Quattro">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Group B</span>
+                        <h3>Audi Quattro</h3>
+                        <p>5-цилиндровый турбо, полный привод, 350+ л.с. Первая успешная 4WD в ралли.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="group-b">
+                    <div class="card-img">
+                        <img src="images/Lancia-Delta-S4.jpg" alt="Lancia Delta S4">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Group B</span>
+                        <h3>Lancia Delta S4</h3>
+                        <p>Компрессор + турбо, карбоновый кузов. Наследие — Delta Integrale.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="group-b">
+                    <div class="card-img">
+                        <img src="images/Ford-RS200.jpg" alt="Ford RS200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Group B</span>
+                        <h3>Ford RS200</h3>
+                        <p>Среднемоторный, 450 л.с., разгон до сотни за 3 сек.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="wrc">
+                    <div class="card-img">
+                        <img src="images/Subaru-Impreza-WRC-97.jpg" alt="Subaru Impreza WRC">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">WRC</span>
+                        <h3>Subaru Impreza WRC</h3>
+                        <p>Боксерный турбо, легендарный синий с золотыми дисками.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="wrc">
+                    <div class="card-img">
+                        <img src="images/Mitsubishi-Lancer-Evo-VI.jpg" alt="Mitsubishi Lancer Evo VI">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">WRC</span>
+                        <h3>Mitsubishi Lancer Evo VI</h3>
+                        <p>Чемпионский автомобиль Томми Мякинена.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="rally1">
+                    <div class="card-img">
+                        <img src="images/Toyota-GR-Yaris-Rally1.jpg" alt="Toyota GR Yaris Rally1">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Rally1</span>
+                        <h3>Toyota GR Yaris Rally1</h3>
+                        <p>Гибридная установка, 500+ л.с., чемпион 2022-2024.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DRIVERS PAGE -->
+        <section id="drivers" class="page">
+            <h2 class="section-title">🏆 Легендарные пилоты</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="classic">Классика</button>
+                <button class="filter-btn" data-filter="modern">Современные</button>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card" data-era="classic">
+                    <div class="card-img">
+                        <img src="images/Loeb.jpg" alt="Себастьен Лёб">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">WRC</span>
+                        <h3>Себастьен Лёб</h3>
+                        <p><strong>9 титулов WRC, 79 побед.</strong></p>
+                        <p> Citroën Xsara, C4, DS3. Величайший пилот в истории.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="classic">
+                    <div class="card-img">
+                        <img src="images/Kankkunen.jpg" alt="Юха Канккунен">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Group A</span>
+                        <h3>Юха Канккунен</h3>
+                        <p><strong>4 титула WRC</strong></p>
+                        <p>Lancia Delta, Toyota Celica. Чемпион 1987, 1991, 1993, 1996.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-era="classic">
+                    <div class="card-img">
+                        <img src="images/McRae.jpg" alt="Колин МакРэй">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Group A</span>
+                        <h3>Колин МакРэй</h3>
+                        <p><strong>1 титул WRC (1995)</strong></p>
+                        <p>Культовый стиль пилотирования. Subaru Impreza, Ford Focus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY PAGE -->
+        <section id="gallery" class="page">
+            <h2 class="section-title">📸 Галерея моментов</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-img-src="images/jamp-Rally-Finland.jpg" data-img-alt="Прыжок в Финляндии">
+                    <div class="card-img">
+                        <img src="images/jamp-Rally-Finland.jpg" alt="Прыжок в Финляндии">
                     </div>
                     <p>Культовый прыжок на этапе в Финляндии</p>
                 </div>
-                <div class="gallery-item"
-                     data-img-src="images/Gravel.jpg"
-                     data-img-alt="Гравийный этап">
+
+                <div class="gallery-item" data-img-src="images/Gravel.jpg" data-img-alt="Гравийный этап">
                     <div class="card-img">
-                        <img src="images/Gravel.jpg" alt="гравий">
+                        <img src="images/Gravel.jpg" alt="Гравий">
                     </div>
                     <p>Гравийный этап, пыль и скорость</p>
                 </div>
-                <div class="gallery-item"
-                     data-img-src="images/Sweden.jpg"
-                     data-img-alt="Снежное ралли Швеция">
+
+                <div class="gallery-item" data-img-src="images/Sweden.jpg" data-img-alt="Ралли Швеция">
                     <div class="card-img">
-                        <img src="images/Sweden.jpg" alt="снег">
+                        <img src="images/Sweden.jpg" alt="Швеция">
                     </div>
-                    <p>Ралли Швеция – шипы и лёд</p>
+                    <p>Ралли Швеция — шипы и лёд</p>
                 </div>
-                <div class="gallery-item"
-                     data-img-src="images/Monte-Carlo.jpg"
-                     data-img-alt="Ралли Монте-Карло">
+
+                <div class="gallery-item" data-img-src="images/Monte-Carlo.jpg" data-img-alt="Ралли Монте-Карло">
                     <div class="card-img">
                         <img src="images/Monte-Carlo.jpg" alt="Монте-Карло">
                     </div>
@@ -356,76 +351,24 @@
         </section>
     </main>
 
-    <footer>
-        <p>Курсовая работа по Web-технологиям. Тема "Ралли: история, машины, легенды".</p>
-        <p>Фотографии из личной коллекции / свободные источники (Unsplash, Pexels).</p>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>🏁 RallyWRC</h3>
+                <p>Курсовая работа по Web-технологиям</p>
+            </div>
+            <p class="footer-bottom">Фотографии из свободных источников</p>
+        </div>
     </footer>
-</div>
 
-<!-- Модальное окно -->
-<div id="imageModal" class="modal">
-    <div class="modal-content">
-        <button class="close-modal">&times;</button>
-        <img id="modalImage" src="" alt="">
-        <p id="modalCaption"></p>
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img id="modalImage" src="" alt="">
+            <p id="modalCaption" class="modal-caption"></p>
+        </div>
     </div>
-</div>
 
-<script>
-    // 1. ФИЛЬТР АВТОМОБИЛЕЙ ПО ЭПОХЕ
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const carCards = document.querySelectorAll('#cars-container .card');
-
-    function filterCars(era) {
-        carCards.forEach(card => {
-            if (era === 'all' || card.dataset.era === era) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        filterButtons.forEach(btn => {
-            if (btn.dataset.filter === era) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-    }
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterCars(btn.dataset.filter);
-        });
-    });
-
-    // 2. МОДАЛЬНОЕ ОКНО ДЛЯ ГАЛЕРЕИ
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalCaption = document.getElementById('modalCaption');
-    const closeModalBtn = document.querySelector('.close-modal');
-
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const imgSrc = item.getAttribute('data-img-src');
-            const imgAlt = item.getAttribute('data-img-alt');
-            modalImg.src = imgSrc;
-            modalCaption.textContent = imgAlt || 'Момент ралли';
-            modal.style.display = 'flex';
-        });
-    });
-
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-    closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
-    });
-</script>
+    <script src="main.js"></script>
 </body>
 </html>
