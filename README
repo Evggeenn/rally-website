@@ -1,0 +1,9 @@
+
+
+ubuntu@ubuntu:~/labs/curs_rebuild_react$ rm -rf node_modules package-lock.json
+ubuntu@ubuntu:~/labs/curs_rebuild_react$ npm install
+ubuntu@ubuntu:~/labs/curs_rebuild_react$ npm run dev
+
+
+
+npm run dev
