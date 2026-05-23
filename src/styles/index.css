@@ -1299,3 +1299,16 @@ body {
     transform: scale(1.02);
     background: var(--primary-dark);
 }
+
+.hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+    border-radius: 2px;
+}

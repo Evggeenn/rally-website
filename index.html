@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rally Hub — история, машины, легенды</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- 🔹 Производительность: предзагрузка внешних доменов -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+  <!-- 🔹 SEO: расширенные метатеги -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rally Hub — портал об истории ралли, легендарных машинах, пилотах и культовых гоночных трассах. Всё о мире ралли в одном месте." />
+  <meta name="keywords" content="ралли, rally, история ралли, раллийные машины, легенды ралли, пилоты, гоночные трассы, автоспорт, WRC, Group B, Audi Quattro, Себастьен Лёб" />
+  <meta name="author" content="Е.В. Ионов" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- 🔹 Тема для мобильных браузеров (совпадает с цветовой схемой сайта) -->
+  <meta name="theme-color" content="#1a1a2e" />
+
+  <!-- 🔹 Open Graph для соцсетей (красивые превью при шеринге) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rally Hub — история, машины, легенды" />
+  <meta property="og:description" content="Погрузитесь в мир Чемпионата мира по ралли — от первых гонок 1973 года до гибридных болидов Rally1." />
+  <meta property="og:image" content="/images/og-preview.jpg" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Rally Hub" />
+
+  <!-- 🔹 Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rally Hub — история, машины, легенды" />
+  <meta name="twitter:description" content="Погрузитесь в мир Чемпионата мира по ралли — от первых гонок 1973 года до гибридных болидов Rally1." />
+  <meta name="twitter:image" content="/images/og-preview.jpg" />
+
+  <!-- 🔹 Favicon для всех устройств -->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- 🔹 Заголовок страницы (важнейший тег для SEO) -->
+  <title>Rally Hub — история, машины, легенды</title>
+
+  <!-- 🔹 Шрифты: асинхронная загрузка с fallback -->
+  <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  </noscript>
+</head>
+<body>
+<!-- 🔹 Основной контейнер приложения -->
+<div id="root"></div>
+
+<!-- 🔹 Модульный скрипт (ESM) -->
+<script type="module" src="/src/main.tsx"></script>
+</body>
 </html>
